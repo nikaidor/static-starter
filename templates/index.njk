@@ -1,0 +1,10 @@
+---
+title: Hello!
+layout: default
+---
+
+{% if test.mode == 'production' %}
+  <p>Hello from production, but not dev!</p>
+{% endif %}
+
+<p>{{ test.title }}</p>
