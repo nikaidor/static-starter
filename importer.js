@@ -10,7 +10,7 @@ async function scripts() {
     return `import '${removeExt}'`
   })
   const importString = filePaths.join('\n')
-  const mainJS = path.resolve(__dirname, 'main.js')
+  const mainJS = path.resolve(__dirname, 'scripts', 'main.js')
   await fs.writeFile(mainJS, importString, 'utf8')
   await fs.appendFile(mainJS, '\n', 'utf8')
 }

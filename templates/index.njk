@@ -3,8 +3,11 @@ title: Hello!
 layout: default
 ---
 
-{% if test.mode == 'production' %}
-  <p>Hello from production, but not dev!</p>
-{% endif %}
-
-<p>{{ test.title }}</p>
+<div class="max-w-960 mx-auto p-24">
+  <h1>{{ test.title }}</h1>
+  <div class="pt-24">
+    {%- for item in test.list -%}
+      <a class="block pt-8 underline" href="/posts/{{ item | lower }}">{{ item }}</a>
+    {%- endfor -%}
+  </div>
+</div>

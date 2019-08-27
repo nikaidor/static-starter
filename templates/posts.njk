@@ -1,7 +1,9 @@
 ---
+layout: default
 pagination:
   data: test.list
   size: 1
+permalink: posts/{{ pagination.items[0] | slug }}/index.html
 ---
 
 {% for item in pagination.items %}
