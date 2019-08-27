@@ -5,7 +5,7 @@
   "author": "Matt Waler",
   "repository": {
     "type" : "git",
-    "url" : ""
+    "url" : "https://github.com/mattwaler/eleventy-starter"
   },
   "license": "MIT",
   "private": false,
