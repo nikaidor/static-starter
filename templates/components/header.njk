@@ -1,6 +1,10 @@
 <header class="bg-gray-900 text-white text-center">
   <div class="container flex justify-between items-center">
-    <a href="/">Home</a>
-    <p>I am the header</p>
+    <a href="/">{{ meta.siteName }}</a>
+    <div>
+      {%- for item in navigation  -%}
+        <a class="pr-12" href="{{ item.link }}">{{ item.text }}</a>
+      {%- endfor  -%}
+    </div>
   </div>
 </header>

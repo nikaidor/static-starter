@@ -1,13 +1,12 @@
 const prettyhtml = require('@starptech/prettyhtml')
 
-module.exports =  config => {
-
-  config.addPassthroughCopy({'_assets': './assets'})
-  config.addPassthroughCopy({'static': '.'})
+module.exports = (config) => {
+  config.addPassthroughCopy({ _assets: './assets' })
+  config.addPassthroughCopy({ static: '.' })
 
   config.addTransform('prettyhtml', (content, outputPath) => {
     if (outputPath.endsWith('.html')) {
-      let pretty = prettyhtml(content)
+      const pretty = prettyhtml(content)
       return pretty
     }
     return content
@@ -20,9 +19,9 @@ module.exports =  config => {
   return {
     dir: {
       data: 'data',
-      input: "templates",
-      includes: "components",
-      layouts: "layouts",
+      input: 'templates',
+      includes: 'components',
+      layouts: 'layouts',
     },
     passthroughFileCopy: true,
   }
