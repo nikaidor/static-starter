@@ -1,4 +1,5 @@
 .DS_Store
+.env
 _assets
 _site
 node_modules

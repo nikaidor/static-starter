@@ -5,4 +5,4 @@ name: About
 tags: pages
 ---
 
-# Page Contents
+# Welcome to the about page!

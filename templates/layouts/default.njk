@@ -2,6 +2,8 @@
 
 {%- block content -%}
   <div class="container">
+    <p>The secret is {{ env.secret }}</p>
+    <p class="py-24">The current mode is {{ env.mode }}</p>
     {{ content | safe }}
   </div>
 {%- endblock -%}

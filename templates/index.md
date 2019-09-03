@@ -1,8 +1,8 @@
 ---
 layout: default
 title: This is the homepage.
-name: Homepage
+name: Home
 tags: pages
 ---
 
-# Hello!
+# This is the index page boys and girls.

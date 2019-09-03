@@ -1,4 +1,4 @@
-const { MODE } = process.env
+const { PROD } = process.env
 const purge = {
   content: ['templates/**/*.njk'],
   extractors: [{
@@ -14,7 +14,7 @@ module.exports = {
     }),
     require('tailwindcss')('./styles/tailwind.js'),
     require('autoprefixer'),
-    ...MODE === 'production'
+    ...PROD
       ? [
         require('@fullhuman/postcss-purgecss')(purge),
         require('postcss-clean'),

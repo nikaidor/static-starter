@@ -17,6 +17,12 @@
       {%- block content -%}{%- endblock -%}
     </div>
 
+    {%- if env.mode === 'development' -%}
+      <div class="absolute bottom-0 left-0 bg-yellow-400 text-yellow-900 shadow m-16 p-24 rounded">
+        <p>Development Mode</p>
+      </div>
+    {%- endif -%}
+
     {% include "footer.njk" %}
 
     <script src="/assets/main.js"></script>
