@@ -2,8 +2,8 @@
   <div class="container flex justify-between items-center">
     <a href="/">{{ meta.siteName }}</a>
     <div>
-      {%- for item in navigation  -%}
-        <a class="pr-12" href="{{ item.link }}">{{ item.text }}</a>
+      {%- for item in collections.pages  -%}
+        <a class="ml-24" href="{{ item.url }}">{{ item.data.name }}</a>
       {%- endfor  -%}
     </div>
   </div>
