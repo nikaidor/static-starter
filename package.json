@@ -10,18 +10,15 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "yarn clean; concurrently 'yarn:css' 'yarn:js' && yarn markup",
-    "clean": "rm -r _site",
+    "build": "rm -r _site; PROD=true concurrently 'yarn:css' 'yarn:js' && PROD=true yarn markup",
     "css": "postcss styles/main.pcss -o static/assets/main.css",
-    "deploy": "PROD=true yarn build",
-    "dev": "yarn build; concurrently 'yarn:watch:*'",
-    "importer": "node importer",
-    "js": "yarn importer && webpack",
-    "markup": "eleventy",
+    "dev": "rm -r _site; concurrently 'yarn:watch:*'",
+    "js": "node import && webpack",
+    "markup": "eleventy --config 11ty.config.js",
     "watch:css": "watch 'yarn css' styles --interval=1",
-    "watch:importer": "watch 'yarn importer' scripts/imports scripts/modules --interval=1",
+    "watch:import": "watch 'node import' scripts/imports scripts/modules --interval=1",
     "watch:js": "webpack -w",
-    "watch:markup": "eleventy --serve"
+    "watch:markup": "eleventy --serve --config 11ty.config.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
