@@ -5,7 +5,7 @@ const { PROD } = process.env
 module.exports = {
   entry: './scripts/main.js',
   output: {
-    path: path.resolve(__dirname, '_assets'),
+    path: path.resolve(__dirname, 'static', 'assets'),
     filename: 'main.js',
   },
   mode: PROD ? 'production' : 'development',

@@ -1,6 +1,6 @@
 .DS_Store
 .env
-_assets
 _site
+static/assets
 node_modules
 yarn-error.log

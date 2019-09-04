@@ -1,9 +1,7 @@
 const prettyhtml = require('@starptech/prettyhtml')
 
 module.exports = (config) => {
-  config.addPassthroughCopy({ _assets: './assets' })
   config.addPassthroughCopy({ static: '.' })
-
   config.addTransform('prettyhtml', (content, outputPath) => {
     if (outputPath.endsWith('.html')) {
       const pretty = prettyhtml(content)
@@ -11,11 +9,9 @@ module.exports = (config) => {
     }
     return content
   })
-
   config.setBrowserSyncConfig({
     open: true,
   })
-
   return {
     dir: {
       data: 'data',

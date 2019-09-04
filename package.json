@@ -11,8 +11,8 @@
   "private": false,
   "scripts": {
     "build": "yarn clean; concurrently 'yarn:css' 'yarn:js' && yarn markup",
-    "clean": "rm -r _assets _site",
-    "css": "postcss styles/main.pcss -o _assets/main.css",
+    "clean": "rm -r _site",
+    "css": "postcss styles/main.pcss -o static/assets/main.css",
     "deploy": "PROD=true yarn build",
     "dev": "yarn build; concurrently 'yarn:watch:*'",
     "importer": "node importer",
