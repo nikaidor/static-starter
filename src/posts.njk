@@ -1,18 +1,20 @@
 ---
-title: Posts
 name: Posts
 tags: pages
+title: This is the posts page.
 ---
 
 {%- extends 'page.njk' -%}
 
 {%- block content -%}
   <div class="container">
-    <h1>Posts</h1>
-    {%- for item in posts  -%}
-      <a class="block" href="/posts/{{ item.id }}">
-        {{ item.title }}
-      </a>
-    {%- endfor  -%}
+    <h1>{{ title }}</h1>
+    <div class="flex flex-col items-start">
+      {%- for item in posts  -%}
+        <a class="py-4 underline" href="/posts/{{ item.id }}">
+          {{ item.title }}
+        </a>
+      {%- endfor  -%}
+    </div>
   </div>
 {%- endblock -%}

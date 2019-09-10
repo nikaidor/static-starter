@@ -1,3 +1,2 @@
-import message from './modules/example'
-
-console.log(`${message}!`)
+import './modules/divs'
+import './modules/nav'

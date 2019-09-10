@@ -13,13 +13,13 @@
 
     {% include "header.njk" %}
 
-    <div class="flex-grow">
+    <main class="flex-grow">
       {%- block content -%}{%- endblock -%}
-    </div>
+    </main>
 
     {%- if env.mode === 'development' -%}
-      <div class="absolute bottom-0 left-0 bg-yellow-400 text-yellow-900 shadow m-16 p-24 rounded">
-        <p>Development Mode</p>
+      <div class="fixed bottom-0 left-0 bg-yellow-400 text-yellow-900 shadow m-16 p-24 rounded">
+        <span>Development Mode</span>
       </div>
     {%- endif -%}
 

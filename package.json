@@ -13,7 +13,7 @@
     "build": "yarn clean; concurrently 'yarn:css' 'yarn:js' && yarn markup",
     "clean": "rm -rf dist",
     "css": "postcss src/_styles/main.pcss -o src/_assets/main.css",
-    "dev": "yarn build && concurrently 'yarn:watch:*'",
+    "dev": "yarn clean; concurrently 'yarn:watch:*'",
     "js": "webpack",
     "prod": "PROD=true yarn build",
     "markup": "eleventy --config 11ty.js",

@@ -1,11 +1,20 @@
 ---
 pagination:
+  alias: post
   data: posts
   size: 1
-  alias: post
 permalink: posts/{{ post.id | string }}/index.html
 ---
 
-{%- for item in pagination.items  -%}
-  {{ item.title }}
-{%- endfor  -%}
+{%- extends 'page.njk' -%}
+{%- set title = post.title -%}
+
+{%- block content -%}
+  <div class="container">
+    <a class="underline block" href="/posts">Go Back</a>
+    {%- for item in pagination.items  -%}
+      <p>{{ item.title }}</p>
+      <p>{{ item.body }}</p>
+    {%- endfor  -%}
+  </div>
+{%- endblock -%}
