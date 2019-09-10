@@ -1,0 +1,11 @@
+---
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: posts/{{ post.id | string }}/index.html
+---
+
+{%- for item in pagination.items  -%}
+  {{ item.title }}
+{%- endfor  -%}

@@ -3,9 +3,9 @@ const path = require('path');
 const { PROD } = process.env
 
 module.exports = {
-  entry: './scripts/main.js',
+  entry: './src/_scripts/main.js',
   output: {
-    path: path.resolve(__dirname, 'static', 'assets'),
+    path: path.resolve(__dirname, 'src', '_assets'),
     filename: 'main.js',
   },
   mode: PROD ? 'production' : 'development',

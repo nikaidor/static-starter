@@ -1,7 +1,11 @@
 const prettyhtml = require('@starptech/prettyhtml')
 
 module.exports = (config) => {
-  config.addPassthroughCopy({ static: '.' })
+  // Pass files to 11ty
+  config.addPassthroughCopy({ './src/_static': './' })
+  config.addPassthroughCopy({ './src/_assets': './assets' })
+
+  // Prettify HTML
   config.addTransform('prettyhtml', (content, outputPath) => {
     if (outputPath.endsWith('.html')) {
       const pretty = prettyhtml(content)
@@ -9,15 +13,22 @@ module.exports = (config) => {
     }
     return content
   })
+
+  // BrowserSync Config
   config.setBrowserSyncConfig({
     open: true,
   })
+
+  // Stop using gitignore for watching
+  config.setUseGitIgnore(false)
+
   return {
     dir: {
-      data: 'data',
-      input: 'templates',
-      includes: 'components',
-      layouts: 'layouts',
+      data: '_data',
+      input: 'src',
+      includes: '_components',
+      layouts: '_layouts',
+      output: 'dist',
     },
     passthroughFileCopy: true,
   }
