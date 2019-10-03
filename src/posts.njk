@@ -7,7 +7,7 @@ title: This is the posts page.
 {%- extends 'page.njk' -%}
 
 {%- block content -%}
-  <div class="container">
+  <div class="{{ classes.container }}">
     <h1>{{ title }}</h1>
     <div class="flex flex-col items-start">
       {%- for item in posts  -%}

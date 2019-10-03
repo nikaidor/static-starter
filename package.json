@@ -10,15 +10,15 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "yarn clean; concurrently 'yarn:css' 'yarn:js' && yarn markup",
-    "clean": "rm -rf .cache dist src/_assets",
-    "css": "parcel build src/_styles/main.pcss --out-dir src/_assets --out-file main.css --no-source-maps",
-    "dev": "yarn clean; concurrently 'yarn:watch:*' --raw",
-    "js": "parcel build src/_scripts/main.js --out-dir src/_assets --out-file main.js --no-source-maps",
-    "markup": "eleventy --config 11ty.js",
-    "watch:css": "parcel watch src/_styles/main.pcss --out-dir src/_assets --out-file main.css",
-    "watch:js": "parcel watch src/_scripts/main.js --out-dir src/_assets --out-file main.js",
-    "watch:markup": "eleventy --serve --config 11ty.js"
+    "build": "yarn clean && concurrently 'yarn:build:*' --raw",
+    "build:css": "parcel build src/_styles/main.pcss --no-source-maps",
+    "build:js": "parcel build src/_scripts/main.js --no-source-maps",
+    "build:markup": "eleventy --config 11ty.config.js",
+    "clean": "rm -rf .cache dist",
+    "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
+    "dev:css": "parcel watch src/_styles/main.pcss",
+    "dev:js": "parcel watch src/_scripts/main.js",
+    "dev:markup": "eleventy --serve --quiet --config 11ty.config.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",

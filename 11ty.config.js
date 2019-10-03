@@ -3,7 +3,6 @@ const prettyhtml = require('@starptech/prettyhtml')
 module.exports = (config) => {
   // Pass files to 11ty
   config.addPassthroughCopy({ './src/_static': './' })
-  config.addPassthroughCopy({ './src/_assets': './assets' })
 
   // Prettify HTML
   config.addTransform('prettyhtml', (content, outputPath) => {
@@ -17,10 +16,8 @@ module.exports = (config) => {
   // BrowserSync Config
   config.setBrowserSyncConfig({
     open: true,
+    files: ['dist'],
   })
-
-  // Stop using gitignore for watching
-  config.setUseGitIgnore(false)
 
   return {
     dir: {
