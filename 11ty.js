@@ -24,10 +24,7 @@ module.exports = (config) => {
 
   return {
     dir: {
-      data: '_data',
       input: 'src',
-      includes: '_components',
-      layouts: '_layouts',
       output: 'dist',
     },
     passthroughFileCopy: true,
