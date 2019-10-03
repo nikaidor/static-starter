@@ -12,11 +12,13 @@ const purge = {
 
 module.exports = {
   plugins: [
-    require('tailwindcss')('./tailwind.config.js'),
+    require('postcss-import'),
+    require('tailwindcss')('./src/_styles/tailwind.js'),
     require('autoprefixer'),
     ...PROD
       ? [
         require('@fullhuman/postcss-purgecss')(purge),
+        require('cssnano'),
       ]
       : [],
   ],
