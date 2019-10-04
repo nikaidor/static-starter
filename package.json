@@ -16,7 +16,7 @@
     "build:markup": "eleventy --config 11ty.config.js",
     "clean": "rm -rf .cache dist",
     "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
-    "dev:css": "watch 'yarn css' src/_styles",
+    "dev:css": "watch 'yarn build:css' src/_styles",
     "dev:js": "parcel watch src/_scripts/main.js",
     "dev:markup": "eleventy --serve --quiet --config 11ty.config.js"
   },
