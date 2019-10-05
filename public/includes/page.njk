@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/main.bundle.css">
+    {%- block head -%}
+      <title>{{ title }}</title>
+    {%- endblock -%}
+  </head>
+
+  <body>
+    {%- include 'nav.njk' -%}
+    {%- block body -%}
+      <p>This is the body block.</p>
+    {%- endblock -%}
+    <script src="/main.bundle.js"></script>
+  </body>
+</html>

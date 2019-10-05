@@ -6,8 +6,8 @@ title: This is the posts page.
 
 {% extends 'page.njk' %}
 
-{% block content %}
-  <div class="{{ classes.container }}">
+{% block body %}
+  <div class="container">
     <h1>{{ title }}</h1>
     <div class="flex flex-col items-start">
       {% for item in posts %}

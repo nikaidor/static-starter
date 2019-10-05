@@ -1,7 +1,4 @@
-.cache
 .DS_Store
-.env
 dist
-src/_assets
 node_modules
 yarn-error.log

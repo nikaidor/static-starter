@@ -9,8 +9,8 @@ permalink: posts/{{ post.id | string }}/index.html
 {% extends 'page.njk' %}
 {% set title = post.title %}
 
-{% block content %}
-  <div class="{{ classes.container }}">
+{% block body %}
+  <div class="container">
     <a class="underline block" href="/posts">Go Back</a>
     {% for item in pagination.items %}
       <p>{{ item.title }}</p>

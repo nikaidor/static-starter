@@ -1,44 +1,32 @@
 {
-  "name": "eleventy-starter",
-  "version": "0.0.1",
-  "description": "A starting point for Eleventy projects with Tailwind and other goodies.",
-  "author": "Matt Waler",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mattwaler/eleventy-starter"
-  },
+  "name": "webpack-proof",
+  "version": "1.0.0",
+  "main": "index.js",
   "license": "MIT",
-  "private": false,
   "scripts": {
-    "build": "yarn clean && NODE_ENV=production concurrently 'yarn:build:*' --raw",
-    "build:css": "postcss src/_styles/main.pcss -o dist/main.css",
-    "build:js": "node import && parcel build src/_scripts/main.js --no-source-maps",
-    "build:markup": "eleventy --config 11ty.config.js",
-    "clean": "rm -rf .cache dist",
-    "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
-    "dev:css": "watch 'yarn build:css' src/_styles",
-    "dev:imports": "watch 'node import' src/_scripts/imports src/_scripts/modules",
-    "dev:js": "parcel watch src/_scripts/main.js",
-    "dev:markup": "eleventy --serve --quiet --config 11ty.config.js"
+    "build": "NODE_ENV=production concurrently 'yarn:build:*' --raw",
+    "build:assets": "webpack",
+    "build:site": "eleventy --config=11ty.config.js",
+    "dev": "concurrently 'yarn:dev:*' --raw",
+    "dev:assets": "webpack",
+    "dev:site": "eleventy --serve --config=11ty.config.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
     "@fullhuman/postcss-purgecss": "^1.3.0",
-    "@starptech/prettyhtml": "^0.10.0",
-    "autoprefixer": "^9.6.1",
+    "autoprefixer": "^9.6.2",
     "axios": "^0.19.0",
+    "babel-loader": "^8.0.6",
     "concurrently": "^4.1.2",
+    "css-loader": "^3.2.0",
     "cssnano": "^4.1.10",
-    "dotenv": "^8.1.0",
-    "eslint": "^6.2.2",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "glob": "^7.1.4",
-    "parcel-bundler": "^1.12.3",
-    "postcss-cli": "^6.1.3",
+    "mini-css-extract-plugin": "^0.8.0",
     "postcss-easy-import": "^3.0.0",
+    "postcss-loader": "^3.0.0",
     "tailwindcss": "^1.1.2",
-    "watch": "^1.0.2"
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   }
 }
