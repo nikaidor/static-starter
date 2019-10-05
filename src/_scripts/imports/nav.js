@@ -1,4 +1,4 @@
-import { click, run } from './helpers'
+import { click, run } from '../modules/helpers'
 
 run(() => {
   const mobileNav = document.querySelector('#mobile-nav')

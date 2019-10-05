@@ -1,2 +1,2 @@
-import './modules/divs'
-import './modules/nav'
+import './imports/divs.js'
+import './imports/nav.js'

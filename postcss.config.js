@@ -12,7 +12,7 @@ const purge = {
 
 module.exports = {
   plugins: [
-    require('postcss-import'),
+    require('postcss-easy-import'),
     require('tailwindcss')('./src/_styles/tailwind.js'),
     require('autoprefixer'),
     ...PROD

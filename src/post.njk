@@ -6,15 +6,15 @@ pagination:
 permalink: posts/{{ post.id | string }}/index.html
 ---
 
-{%- extends 'page.njk' -%}
-{%- set title = post.title -%}
+{% extends 'page.njk' %}
+{% set title = post.title %}
 
-{%- block content -%}
+{% block content %}
   <div class="{{ classes.container }}">
     <a class="underline block" href="/posts">Go Back</a>
-    {%- for item in pagination.items  -%}
+    {% for item in pagination.items %}
       <p>{{ item.title }}</p>
       <p>{{ item.body }}</p>
-    {%- endfor  -%}
+    {% endfor %}
   </div>
-{%- endblock -%}
+{% endblock %}

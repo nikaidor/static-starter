@@ -14,14 +14,14 @@
     {% include "header.njk" %}
 
     <main class="flex-grow">
-      {%- block content -%}{%- endblock -%}
+      {% block content %}{% endblock %}
     </main>
 
-    {%- if env.mode === 'development' -%}
+    {% if env.mode === 'development' %}
       <div class="fixed bottom-0 left-0 bg-yellow-400 text-yellow-900 shadow m-16 p-24 rounded">
         <span>Development Mode</span>
       </div>
-    {%- endif -%}
+    {% endif %}
 
     {% include "footer.njk" %}
 

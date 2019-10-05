@@ -2,10 +2,10 @@
 title: This is the homepage.
 ---
 
-{%- extends 'page.njk' -%}
+{% extends 'page.njk' %}
 
-{%- block content -%}
+{% block content %}
   <div class="{{ classes.container }}">
     <h1>{{ title }}</h1>
   </div>
-{%- endblock -%}
+{% endblock %}
