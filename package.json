@@ -11,6 +11,7 @@
     "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
     "dev:assets": "webpack",
     "dev:site": "eleventy --serve --config=11ty.config.js",
+    "dev:webhook": "node webhook",
     "lint": "eslint --ext .js scripts/ --fix"
   },
   "devDependencies": {
@@ -30,6 +31,8 @@
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "koa": "^2.8.2",
+    "koa-router": "^7.4.0",
     "mini-css-extract-plugin": "^0.8.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^3.0.0",
