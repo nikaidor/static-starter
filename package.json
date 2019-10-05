@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production concurrently 'yarn:build:*' --raw",
+    "build": "yarn clean && NODE_ENV=production concurrently 'yarn:build:*' --raw",
     "build:assets": "webpack",
     "build:site": "eleventy --config=11ty.config.js",
-    "dev": "concurrently 'yarn:dev:*' --raw",
+    "clean": "rm -rf dist",
+    "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
     "dev:assets": "webpack",
     "dev:site": "eleventy --serve --config=11ty.config.js"
   },
