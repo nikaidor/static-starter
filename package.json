@@ -6,11 +6,11 @@
   "scripts": {
     "build": "yarn clean && NODE_ENV=production concurrently 'yarn:build:*' --raw",
     "build:assets": "webpack",
-    "build:site": "eleventy --config=11ty.config.js",
+    "build:site": "eleventy --quiet --config=11ty.config.js",
     "clean": "rm -rf dist",
     "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
     "dev:assets": "webpack",
-    "dev:site": "eleventy --serve --config=11ty.config.js",
+    "dev:site": "eleventy --serve --quiet --config=11ty.config.js",
     "dev:webhook": "node webhook",
     "lint": "eslint --ext .js scripts/ --fix"
   },

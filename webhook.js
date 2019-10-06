@@ -19,4 +19,4 @@ app
   .use(router.routes())
   .use(router.allowedMethods())
 
-app.listen(PORT, () => console.log(`Server live on port ${PORT}.`))
+app.listen(PORT, () => console.log(`Rebuild webhook live on port ${PORT}.`))

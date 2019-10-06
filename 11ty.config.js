@@ -1,7 +1,11 @@
 module.exports = (config) => {
   config.setBrowserSyncConfig({
+    online: true,
     open: true,
-    files: ['dist']
+    files: [
+      'dist/main.bundle.css',
+      'dist/main.bundle.js'
+    ]
   })
 
   config.addPassthroughCopy({ 'public/static': './' })

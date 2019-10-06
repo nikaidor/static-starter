@@ -7,7 +7,7 @@ export function run (el, fn) {
       fn(match)
     })
   } else if (isDev) {
-    console.log(`Not running ${fn}, no matches for ${el} found.`)
+    console.warn(`Run Warning: No matches for "${el}" found.`)
   }
 }
 
