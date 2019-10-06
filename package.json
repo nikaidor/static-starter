@@ -1,8 +1,13 @@
 {
-  "name": "webpack-proof",
+  "name": "11ty-starter",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A modern starting point for 11ty with Webpack and TailwindCSS.",
+  "author": "Matt Waler",
+  "main": "11ty.config.js",
   "license": "MIT",
+  "homepage": "https://github.com/mattwaler/11ty-starter",
+  "repository": "https://github.com/mattwaler/11ty-starter",
+  "bugs": "https://github.com/mattwaler/11ty-starter/issues",
   "scripts": {
     "build": "yarn clean && NODE_ENV=production concurrently 'yarn:build:*' --raw",
     "build:assets": "webpack",
@@ -12,6 +17,11 @@
     "dev:assets": "webpack",
     "dev:site": "eleventy --serve --quiet --config=11ty.config.js",
     "webhook": "node webhook"
+  },
+  "engines": {
+    "npm": ">=6.10.2",
+    "node": ">=12.9.1",
+    "yarn": ">=1.17.3"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
