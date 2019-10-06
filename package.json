@@ -11,8 +11,7 @@
     "dev": "yarn clean && concurrently 'yarn:dev:*' --raw",
     "dev:assets": "webpack",
     "dev:site": "eleventy --serve --quiet --config=11ty.config.js",
-    "dev:webhook": "node webhook",
-    "lint": "eslint --ext .js scripts/ --fix"
+    "webhook": "node webhook"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
