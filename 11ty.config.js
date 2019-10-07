@@ -7,7 +7,6 @@ module.exports = (config) => {
       'dist/main.bundle.js',
     ],
   })
-
   config.addPassthroughCopy({ 'public/static': './' })
 
   return {
