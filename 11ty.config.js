@@ -4,8 +4,8 @@ module.exports = (config) => {
     open: true,
     files: [
       'dist/main.bundle.css',
-      'dist/main.bundle.js'
-    ]
+      'dist/main.bundle.js',
+    ],
   })
 
   config.addPassthroughCopy({ 'public/static': './' })
@@ -15,7 +15,7 @@ module.exports = (config) => {
       data: 'data',
       includes: 'includes',
       input: 'public',
-      output: 'dist'
-    }
+      output: 'dist',
+    },
   }
 }

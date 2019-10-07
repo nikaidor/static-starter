@@ -1,7 +1,8 @@
 const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const Webpackbar = require('webpackbar')
 
-const isDev = process.env.NODE_ENV != 'production'
+const isDev = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   entry: './scripts/main.js',
@@ -10,7 +11,7 @@ module.exports = {
     filename: 'main.bundle.js',
   },
   mode: isDev ? 'development' : 'production',
-  watch: isDev ? true : false,
+  stats: isDev ? 'errors-warnings' : 'normal',
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -27,6 +28,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'main.bundle.css',
     }),
+    new Webpackbar(),
   ],
   module: {
     rules: [
@@ -36,12 +38,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.pcss$/,
+        exclude: /(node_modules|bower_components)/,
         use: [
           MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { importLoaders: 1 } },
@@ -50,4 +53,4 @@ module.exports = {
       },
     ],
   },
-};
+}
