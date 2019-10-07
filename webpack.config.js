@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 module.exports = {
   entry: './scripts/main.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist', 'assets'),
     filename: 'main.bundle.js',
   },
   mode: isDev ? 'development' : 'production',

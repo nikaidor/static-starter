@@ -3,8 +3,7 @@ module.exports = (config) => {
     online: true,
     open: true,
     files: [
-      'dist/main.bundle.css',
-      'dist/main.bundle.js',
+      'dist/assets/**/*',
     ],
   })
   config.addPassthroughCopy({ 'public/static': './' })
