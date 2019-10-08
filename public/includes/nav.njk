@@ -1,4 +1,7 @@
-<div class="container">
-  <a href="/" class="underline">Homepage</a>
-  <a href="/posts" class="underline ml-16">Posts</a>
-</div>
+<nav class="container">
+  {% for item in navigation.header %}
+    <a href="{{ item.link }}" class="underline {{ "ml-16" if not loop.first }}">
+      {{ item.text }}
+    </a>
+  {% endfor %}
+</nav>
