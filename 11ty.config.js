@@ -7,7 +7,6 @@ module.exports = (config) => {
     if (outputPath.endsWith('.html')) {
       const minified = htmlmin.minify(content, {
         removeComments: true,
-        collapseInlineTagWhitespace: true,
         collapseWhitespace: true,
       })
       return minified
@@ -25,8 +24,6 @@ module.exports = (config) => {
 
   return {
     dir: {
-      data: 'data',
-      includes: 'includes',
       input: 'public',
       output: 'dist',
     },
