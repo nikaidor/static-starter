@@ -1,6 +1,5 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const Webpackbar = require('webpackbar')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -11,7 +10,6 @@ module.exports = {
     filename: 'main.bundle.js',
   },
   mode: isDev ? 'development' : 'production',
-  stats: isDev ? 'errors-warnings' : 'normal',
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -28,7 +26,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'main.bundle.css',
     }),
-    new Webpackbar(),
   ],
   module: {
     rules: [

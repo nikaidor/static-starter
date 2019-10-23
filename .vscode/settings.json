@@ -1,10 +1,5 @@
 {
   "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
     ".editorconfig": true,
     "11ty.config.js": true,
     "postcss.config.js": true,
