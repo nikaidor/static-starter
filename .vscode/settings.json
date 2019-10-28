@@ -1,17 +1,17 @@
 {
   "files.exclude": {
     ".editorconfig": true,
-    "11ty.config.js": true,
-    "postcss.config.js": true,
     ".nvmrc": true,
     ".eslintrc.*": true,
     ".vscode": true,
     "node_modules": true,
-    "dist": true,
     "LICENSE": true,
-    ".gitignore": true,
     "webhook.js": true,
     "yarn.lock": true,
-    "webpack.config.js": true
+    "11ty.config.js": true,
+    "webpack.config.js": true,
+    "postcss.config.js": true,
+    ".gitignore": true,
+    ".browserslistrc": true
   }
 }
