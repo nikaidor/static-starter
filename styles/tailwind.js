@@ -2,15 +2,15 @@
 const colorValues = {}
 
 // Screens
-const screenValues = [320, 480, 640, 768, 960, 1024, 1280, 1366]
+const screenValues = [560, 640, 768, 960, 1280]
 
 // Fonts
 const fontFamilyValues = {}
 const fontSizeValues = [14, 16, 18, 20, 24, 30, 36, 42, 48, 60, 72, 96]
-const fontWeightValues = [100, 200, 300, 400, 500, 600, 700, 800, 900]
+const fontWeightValues = [300, 400, 500, 600, 700]
 
 // Spacing
-const remValues = [1, 4, 8, 12, 16, 18, 20, 24, 32, 40, 48, 56, 64, 80, 96, 960]
+const remValues = [1, 4, 8, 12, 16, 18, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 320, 480, 640, 768, 960]
 const viewportValues = [25, 50, 75, 100]
 const percentValues = [20, 25, 40, 50, 60, 75, 80, 100]
 const percentCalcValues = {
@@ -72,6 +72,7 @@ const margin = {
 module.exports = {
   corePlugins: {
     container: false,
+    flex: false,
   },
   theme: {
     extend: {
@@ -90,4 +91,7 @@ module.exports = {
     screens,
     width: spacing,
   },
+  plugins: [
+    require('@tailwindcss/custom-forms'),
+  ],
 }
