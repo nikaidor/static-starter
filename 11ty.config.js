@@ -1,23 +1,5 @@
-require('dotenv').config()
-const htmlmin = require('html-minifier')
-
-const isDev = process.env.NODE_ENV !== 'production'
-
 module.exports = (config) => {
-  config.addPassthroughCopy({ static: './' })
-
-  if (!isDev) {
-    config.addTransform('htmlmin', function (content, outputPath) {
-      if (outputPath && outputPath.endsWith('.html')) {
-        const minified = htmlmin.minify(content, {
-          removeComments: true,
-          collapseWhitespace: true,
-        })
-        return minified
-      }
-      return content
-    })
-  }
+  config.addPassthroughCopy({ 'src/static': './' })
 
   config.setBrowserSyncConfig({
     files: [
@@ -31,7 +13,7 @@ module.exports = (config) => {
 
   return {
     dir: {
-      input: 'public',
+      input: 'src/public',
       output: 'dist',
     },
     jsDataFileSuffix: '.config',

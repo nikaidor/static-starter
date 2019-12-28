@@ -4,7 +4,7 @@ const CSS = require('mini-css-extract-plugin')
 const isDev = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  entry: './scripts/main.js',
+  entry: './src/scripts/main.js',
   output: {
     path: path.resolve(__dirname, 'dist', 'assets'),
     filename: 'main.bundle.js',
