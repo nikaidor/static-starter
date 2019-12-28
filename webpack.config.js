@@ -10,15 +10,7 @@ module.exports = {
     filename: 'main.bundle.js',
   },
   mode: isDev ? 'development' : 'production',
-  stats: isDev ? 'errors-warnings' : {
-    builtAt: false,
-    children: false,
-    entrypoints: false,
-    hash: false,
-    modules: false,
-    timings: false,
-    version: false,
-  },
+  stats: isDev ? 'errors-warnings' : 'normal',
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -38,7 +30,6 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '~': path.resolve(__dirname, 'scripts'),
       svelte: path.resolve('node_modules', 'svelte'),
     },
     extensions: ['.mjs', '.js', '.svelte'],

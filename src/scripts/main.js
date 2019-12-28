@@ -1,8 +1,5 @@
-// Dependencies
-import 'cssuseragent'
-
 // CSS
-import '../styles/tailwind.pcss'
+import '../styles/main.pcss'
 
 // JS
 import './imports/*.js'
