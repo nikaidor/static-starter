@@ -1,6 +1,6 @@
 module.exports = {
   header: [
     { text: 'Home', link: '/' },
-    { text: 'Posts', link: '/posts' },
+    { text: 'About', link: '/about/' },
   ],
 }
