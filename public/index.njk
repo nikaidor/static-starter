@@ -1,5 +1,5 @@
 ---
-title: About
+title: Index
 ---
 
 {% extends 'page.njk' %}
@@ -7,6 +7,10 @@ title: About
 {% block body %}
   <div class="container">
     <h1>This is the {{ title }} page.</h1>
-    <div class="js-message"></div>
+    <span id="message"></span>
   </div>
+{% endblock %}
+
+{% block scripts %}
+ <script src="/assets/hello.js"></script>
 {% endblock %}

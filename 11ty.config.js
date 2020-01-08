@@ -1,5 +1,5 @@
 module.exports = (config) => {
-  config.addPassthroughCopy({ 'src/static': './' })
+  config.addPassthroughCopy({ 'static': './' })
 
   config.setBrowserSyncConfig({
     files: [
@@ -13,7 +13,7 @@ module.exports = (config) => {
 
   return {
     dir: {
-      input: 'src/public',
+      input: 'public',
       output: 'dist',
     },
     jsDataFileSuffix: '.config',

@@ -3,12 +3,12 @@
 The goal of this project is to bring together what I believe are most pragmatic and performant frontend frameworks and tools into a cohesive template for making web development wonderful.
 
 So far, this template includes:
+
 - 11ty
-- Babel
-- ESLint
+- Buble
+- Rollup
 - Svelte
 - TailwindCSS
-- Webpack
 
 ## Get Going
 - clone the repo (duh)
