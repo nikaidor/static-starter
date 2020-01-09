@@ -3,14 +3,19 @@ title: Index
 ---
 
 {% extends 'page.njk' %}
+{% from 'alternating.njk' import alternating %}
 
 {% block body %}
   <div class="container">
     <h1>This is the {{ title }} page.</h1>
     <span id="message"></span>
   </div>
-{% endblock %}
-
-{% block scripts %}
- <script src="/assets/hello.js"></script>
+    {% set left %}
+      <p>I am left!</p>
+    {% endset %}
+    {% set right %}
+      <p>I am right!</p>
+    {% endset %}
+    {{ alternating(left, right) }}
+    {{ alternating(left, right, true) }}
 {% endblock %}

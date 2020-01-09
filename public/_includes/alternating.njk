@@ -1,0 +1,12 @@
+{% macro alternating(left, right, reverse = false) %}
+  <div class="container">
+    <div class="flex flex-wrap -m-48 {{ 'flex-row-reverse' if reverse }}">
+      <div class="w-100% p-48 640:w-50%">
+        {{ left | safe }}
+      </div>
+      <div class="w-100% p-48 640:w-50%">
+        {{ right | safe }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}
