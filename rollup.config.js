@@ -1,4 +1,3 @@
-import buble from '@rollup/plugin-buble'
 import commonjs from '@rollup/plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
@@ -8,14 +7,14 @@ import { terser } from 'rollup-plugin-terser'
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
-	input: 'scripts/main.js',
-	output: {
-		sourcemap: false,
-		format: 'iife',
-		name: 'main',
-		file: 'dist/assets/main.bundle.js'
-	},
-	plugins: [
+  input: 'scripts/main.js',
+  output: {
+    sourcemap: false,
+    format: 'iife',
+    name: 'main',
+    file: 'dist/assets/main.bundle.js',
+  },
+  plugins: [
     svelte({
       dev: isDev,
     }),
@@ -23,15 +22,15 @@ export default {
       extract: 'dist/assets/main.bundle.css',
       minimize: !isDev,
     }),
-		resolve({
+    resolve({
       browser: true,
-			dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
-		}),
-		commonjs(),
-    !isDev && buble(),
-		!isDev && terser(),
-	],
-	watch: {
-		clearScreen: false
-	}
+      dedupe: importee =>
+        importee === 'svelte' || importee.startsWith('svelte/'),
+    }),
+    commonjs(),
+    !isDev && terser(),
+  ],
+  watch: {
+    clearScreen: false,
+  },
 }

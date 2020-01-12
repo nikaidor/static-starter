@@ -8,14 +8,18 @@ title: Index
 {% block body %}
   <div class="container">
     <h1>This is the {{ title }} page.</h1>
+    {# Svelte Mounting Point #}
     <span id="message"></span>
   </div>
-    {% set left %}
-      <p>I am left!</p>
-    {% endset %}
-    {% set right %}
-      <p>I am right!</p>
-    {% endset %}
-    {{ alternating(left, right) }}
-    {{ alternating(left, right, true) }}
+
+  {# Alternating Macro #}
+  {% set left %}
+    <p>I am left!</p>
+  {% endset %}
+  {% set right %}
+    <p>I am right!</p>
+  {% endset %}
+  {{ alternating(left, right) }}
+  {{ alternating(left, right, true) }}
+
 {% endblock %}

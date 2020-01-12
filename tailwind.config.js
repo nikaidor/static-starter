@@ -3,7 +3,23 @@ const screenValues = [640, 960, 1280]
 const fontFamilyValues = {}
 const fontSizeValues = [14, 16, 18, 20, 24, 30, 36, 42, 48, 60, 72, 96]
 const fontWeightValues = [300, 400, 500, 600, 700]
-const remValues = [1, 4, 8, 12, 16, 18, 20, 24, 32, 40, 48, 56, 64, 80, 96, 128, 320, 480, 640, 768, 960]
+const remValues = [
+  4,
+  8,
+  12,
+  16,
+  24,
+  32,
+  48,
+  64,
+  96,
+  128,
+  320,
+  480,
+  640,
+  768,
+  960,
+]
 const viewportValues = [25, 50, 75, 100]
 const percentValues = [20, 25, 40, 50, 60, 75, 80, 100]
 const percentCalcValues = {
@@ -11,40 +27,40 @@ const percentCalcValues = {
   '66%': 'calc(100% * (2/3))',
 }
 
-const rem = (value) => `${value / 16}rem`
+const rem = value => `${value / 16}rem`
 
 const fontSize = {}
-fontSizeValues.forEach((value) => {
+fontSizeValues.forEach(value => {
   fontSize[value] = rem(value)
 })
 
 const fontWeight = {}
-fontWeightValues.forEach((value) => {
+fontWeightValues.forEach(value => {
   fontWeight[value] = value
 })
 
 const percents = { ...percentCalcValues }
-percentValues.forEach((value) => {
+percentValues.forEach(value => {
   percents[`${value}%`] = `${value}%`
 })
 
 const rems = {}
 const negativeRems = {}
-const negativeRemValues = remValues.map((value) => `-${value}`)
-remValues.forEach((value) => {
+const negativeRemValues = remValues.map(value => `-${value}`)
+remValues.forEach(value => {
   rems[value] = rem(value)
 })
-negativeRemValues.forEach((value) => {
+negativeRemValues.forEach(value => {
   negativeRems[value] = rem(value)
 })
 
 const screens = {}
-screenValues.forEach((value) => {
+screenValues.forEach(value => {
   screens[`${value}`] = `${value}px`
 })
 
 const viewports = {}
-viewportValues.forEach((value) => {
+viewportValues.forEach(value => {
   viewports[`${value}vw`] = `${value}vw`
   viewports[`${value}vh`] = `${value}vh`
 })
@@ -84,7 +100,5 @@ module.exports = {
     screens,
     width: spacing,
   },
-  plugins: [
-    require('@tailwindcss/custom-forms'),
-  ],
+  plugins: [require('@tailwindcss/custom-forms')],
 }

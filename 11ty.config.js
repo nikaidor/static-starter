@@ -1,10 +1,8 @@
-module.exports = (config) => {
-  config.addPassthroughCopy({ 'static': './' })
+module.exports = config => {
+  config.addPassthroughCopy({ static: './' })
 
   config.setBrowserSyncConfig({
-    files: [
-      'dist/assets/**/*',
-    ],
+    files: ['dist/assets/**/*'],
     online: false,
     open: true,
   })
