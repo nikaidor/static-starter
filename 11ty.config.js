@@ -11,7 +11,7 @@ module.exports = config => {
 
   return {
     dir: {
-      input: 'public',
+      input: 'pages',
       output: 'dist',
     },
     jsDataFileSuffix: '.config',
