@@ -1,104 +1,95 @@
-const colorValues = {}
-const screenValues = [640, 960, 1280]
-const fontFamilyValues = {}
-const fontSizeValues = [14, 16, 18, 20, 24, 30, 36, 42, 48, 60, 72, 96]
-const fontWeightValues = [300, 400, 500, 600, 700]
-const remValues = [
-  4,
-  8,
-  12,
-  16,
-  24,
-  32,
-  48,
-  64,
-  96,
-  128,
-  320,
-  480,
-  640,
-  768,
-  960,
-]
-const viewportValues = [25, 50, 75, 100]
-const percentValues = [20, 25, 40, 50, 60, 75, 80, 100]
-const percentCalcValues = {
+// #region Values
+
+const calcs = {
   '33%': 'calc(100% * (1/3))',
-  '66%': 'calc(100% * (2/3))',
 }
+const colors = {}
+const fontFamilies = {}
+const fontSizes = [14, 16, 18, 20, 24, 30, 36, 42]
+const fontWeights = [400, 500, 600, 700]
+const percents = [25, 50, 100]
+const rems = [1, 8, 16, 24, 32, 48, 64, 320, 480, 640, 960]
+const screens = [640, 768, 960]
+const viewports = [100]
+
+// #endregion
+
+// #region Building Objects From ^ Values
+
+const fontSizeObject = {}
+const fontWeightObject = {}
+const negativeRems = rems.map(value => `-${value}`)
+const negativeRemObject = {}
+const percentObject = { ...calcs }
+const remObject = {}
+const screenObject = {}
+const viewportObject = {}
 
 const rem = value => `${value / 16}rem`
 
-const fontSize = {}
-fontSizeValues.forEach(value => {
-  fontSize[value] = rem(value)
+fontSizes.forEach(value => {
+  fontSizeObject[value] = rem(value)
 })
 
-const fontWeight = {}
-fontWeightValues.forEach(value => {
-  fontWeight[value] = value
+fontWeights.forEach(value => {
+  fontWeightObject[value] = value
 })
 
-const percents = { ...percentCalcValues }
-percentValues.forEach(value => {
-  percents[`${value}%`] = `${value}%`
+percents.forEach(value => {
+  percentObject[`${value}%`] = `${value}%`
 })
 
-const rems = {}
-const negativeRems = {}
-const negativeRemValues = remValues.map(value => `-${value}`)
-remValues.forEach(value => {
-  rems[value] = rem(value)
-})
-negativeRemValues.forEach(value => {
-  negativeRems[value] = rem(value)
+rems.forEach(value => {
+  remObject[value] = rem(value)
 })
 
-const screens = {}
-screenValues.forEach(value => {
-  screens[`${value}`] = `${value}px`
+negativeRems.forEach(value => {
+  negativeRemObject[value] = rem(value)
 })
 
-const viewports = {}
-viewportValues.forEach(value => {
-  viewports[`${value}vw`] = `${value}vw`
-  viewports[`${value}vh`] = `${value}vh`
+screens.forEach(value => {
+  screenObject[`${value}`] = `${value}px`
+})
+
+viewports.forEach(value => {
+  viewportObject[`${value}vw`] = `${value}vw`
+  viewportObject[`${value}vh`] = `${value}vh`
 })
 
 const spacing = {
   0: '0',
   auto: 'auto',
-  ...rems,
-  ...percents,
-  ...viewports,
+  ...remObject,
+  ...percentObject,
+  ...viewportObject,
 }
 
-const margin = {
-  ...spacing,
-  ...negativeRems,
-}
+// #endregion
+
+// #region Configuration Object
 
 module.exports = {
   corePlugins: {
     container: false,
-    flex: false,
   },
   theme: {
     extend: {
-      colors: colorValues,
-      fontFamily: fontFamilyValues,
+      colors,
+      fontFamily: fontFamilies,
     },
-    fontSize,
-    fontWeight,
+    fontSize: fontSizeObject,
+    fontWeight: fontWeightObject,
     height: spacing,
-    margin,
+    margin: { ...spacing, ...negativeRemObject },
     maxHeight: spacing,
     maxWidth: spacing,
     minHeight: spacing,
     minWidth: spacing,
     padding: spacing,
-    screens,
+    screens: screenObject,
     width: spacing,
   },
   plugins: [require('@tailwindcss/custom-forms')],
 }
+
+// #endregion
