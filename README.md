@@ -11,6 +11,6 @@ So far, this template includes:
 
 ## Get Going
 - clone the repo (duh)
-- `yarn` to grab dependencies
-- `yarn dev` to fire up dev server
-- `yarn build` to build static site
+- `npm i` to grab dependencies
+- `npm run dev` to fire up dev server
+- `npm run build` to build static site
