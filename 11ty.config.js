@@ -3,8 +3,8 @@ module.exports = config => {
 
   config.setBrowserSyncConfig({
     files: ['dist/assets/**/*'],
-    online: false,
     open: true,
+    watch: true,
   })
 
   config.setDataDeepMerge(true)
