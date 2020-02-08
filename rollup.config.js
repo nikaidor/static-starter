@@ -5,7 +5,7 @@ import resolve from '@rollup/plugin-node-resolve'
 import svelte from 'rollup-plugin-svelte'
 import { terser } from 'rollup-plugin-terser'
 
-const dev = process.env.NODE_ENV == 'dev'
+const prod = process.env.NODE_ENV == 'production'
 
 export default {
   input: 'scripts/_main.js',
@@ -15,17 +15,17 @@ export default {
     name: 'main',
     file: 'dist/assets/main.bundle.js',
   },
-  inlineDynamicImports: true,
   plugins: [
     replace({
-      devMode: dev,
+      API: prod ? '' : 'http://localhost:3000',
+      devMode: !prod,
     }),
     svelte({
-      dev,
+      dev: !prod,
     }),
     postcss({
       extract: 'dist/assets/main.bundle.css',
-      minimize: !dev,
+      minimize: prod,
     }),
     resolve({
       browser: true,
@@ -33,7 +33,7 @@ export default {
         importee === 'svelte' || importee.startsWith('svelte/'),
     }),
     commonjs(),
-    !dev && terser(),
+    prod && terser(),
   ],
   watch: {
     clearScreen: false,

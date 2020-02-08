@@ -1,13 +1,11 @@
 module.exports = config => {
   config.addPassthroughCopy({ static: './' })
+  config.setDataDeepMerge(true)
 
   config.setBrowserSyncConfig({
-    files: ['dist/assets/**/*'],
+    files: ['dist/**/*'],
     open: true,
-    watch: true,
   })
-
-  config.setDataDeepMerge(true)
 
   return {
     dir: {

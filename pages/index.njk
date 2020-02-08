@@ -7,15 +7,15 @@ title: Index
 {% block body %}
   <div class="container">
     {# 11ty #}
-    <h1>This is the {{ title }} page.</h1>
+    <h1>This is the {{ title }} page...</h1>
 
     {# Svelte #}
     <article svelte-message />
 
     {# Alpine #}
     <article x-data="{ show: false }">
-      <button @click="show = !show">Toggle Show</button>
-      <div x-show="show">I show!</div>
+      <button class="mt-16 bg-blue-500 p-16 text-white" @click="show = !show">Toggle Show</button>
+      <div class="mt-16" x-show="show">I show!</div>
     </article>
   </div>
 {% endblock %}

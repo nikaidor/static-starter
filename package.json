@@ -15,9 +15,10 @@
     "build:11ty": "eleventy $npm_package_config_11ty",
     "build:rollup": "rollup -c",
     "clean": "del-cli dist",
-    "dev": "cross-env NODE_ENV=dev npm-run-all clean -p build:* -p dev:*",
+    "dev": "npm-run-all clean build:* -p dev:*",
     "dev:11ty": "eleventy --serve $npm_package_config_11ty",
-    "dev:rollup": "rollup -c -w"
+    "dev:rollup": "rollup -c -w",
+    "dev:server": "json-server --watch db.json"
   },
   "browserslist": "> 2%",
   "devDependencies": {
@@ -30,7 +31,7 @@
     "autoprefixer": "^9.6.2",
     "cross-env": "^6.0.3",
     "del-cli": "^3.0.0",
-    "miragejs": "^0.1.33",
+    "json-server": "^0.15.1",
     "npm-run-all": "^4.1.5",
     "postcss-import": "^12.0.1",
     "prettier": "^1.19.1",

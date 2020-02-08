@@ -5,11 +5,15 @@ The goal of this project is to bring together what I believe are most pragmatic 
 So far, this template includes:
 
 - 11ty
+- AlpineJS
+- Axios
+- JSON-Server
 - Rollup
 - Svelte
 - TailwindCSS
 
 ## Get Going
+
 - clone the repo (duh)
 - `npm i` to grab dependencies
 - `npm run dev` to fire up dev server
