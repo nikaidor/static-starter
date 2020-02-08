@@ -5,7 +5,7 @@ The goal of this project is to bring together what I believe are most pragmatic 
 So far, this template includes:
 
 - 11ty
-- AlpineJS
+- Alpine
 - Axios
 - JSON-Server
 - Rollup
