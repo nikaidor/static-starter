@@ -1,12 +1,12 @@
 {
-  "name": "site-start",
-  "description": "Site start.",
+  "name": "static-start",
+  "description": "A starter template for building wonderful static sites.",
   "author": "Matt Waler",
   "main": "11ty.config.js",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/mattwaler/11ty-starter",
-  "repository": "https://github.com/mattwaler/11ty-starter",
-  "bugs": "https://github.com/mattwaler/11ty-starter/issues",
+  "homepage": "https://github.com/mattwaler/static-starter",
+  "repository": "https://github.com/mattwaler/static-starter",
+  "bugs": "https://github.com/mattwaler/static-starter/issues",
   "config": {
     "11ty": "--quiet --config=11ty.config.js"
   },

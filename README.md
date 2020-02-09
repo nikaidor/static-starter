@@ -1,16 +1,6 @@
-# 11ty Starter
+# StaticStart
 
 The goal of this project is to bring together what I believe are most pragmatic and performant frontend frameworks and tools into a cohesive template for making web development wonderful.
-
-So far, this template includes:
-
-- 11ty
-- Alpine
-- Axios
-- JSON-Server
-- Rollup
-- Svelte
-- TailwindCSS
 
 ## Getting Started
 
@@ -20,9 +10,13 @@ So far, this template includes:
 
 ## Templating
 
-This project uses 11ty for templating and static generation. All templating takes place inside the `pages` directory. 
+### 11ty
 
-All static assets should be placed in `static`, as that is copied as-is into the `dist` directory.
+This project uses 11ty for templating and static generation. All templating takes place inside the `pages` directory.
+
+### Assets
+
+All static assets, like images and fonts, should be placed in `static`, as it is copied as-is into the `dist` directory.
 
 Refer to the [11ty docs](https://www.11ty.dev/docs/) for more information on how to customize 11ty to your liking, it is an incredibly powerful tool!
 
@@ -30,15 +24,23 @@ Refer to the [11ty docs](https://www.11ty.dev/docs/) for more information on how
 
 This project uses a combination of tools to make developing dynamic data-driven scripting simple and pleasant.
 
+### Rollup
+
 For bundling, this project uses [Rollup](https://rollupjs.org/guide/en/). This is a fantastic bundler that makes complex bundling simple and highly configurable. See `rollup.config.js` to see what is going on under the hood.
 
-For simple data-driven functionality like toggling visibility of menus, especially in scenarios where you would like the markup to be static and indexable, reach for [Alpine](https://github.com/alpinejs/alpine/). It provides a Vue-esque API that allows you to script inside the markup. 
+### Alpine
+
+For simple data-driven functionality like toggling visibility of menus, especially in scenarios where you would like the markup to be static and indexable, reach for [Alpine](https://github.com/alpinejs/alpine/). It provides a Vue-esque API that allows you to script inside the markup.
 
 **Note:** See `pages/about.njk` for an example of Alpine in action.
+
+### Svelte
 
 For more complex functionality, especially those that don't require SEO, such as pulling data from an API client side or sending post requests, this project utilitizes [Svelte](https://svelte.dev). Svelte is an exceptional JS framework that makes reactivity simple and predictable. See `scripts/Users.svelte` to get an idea of how and when to utilize Svelte over Alpine.
 
 **Note:** See `pages/index.njk` and `scripts/_main.js` to see how Svelte can be initialized on pages.
+
+### JSON-Server
 
 This project also includes [JSON-Server](https://github.com/typicode/json-server) for mocking an API in development. See `db.json`, and `scripts/Users.svelte` to see this in action. Requests to the API will change the `db.json` file, so state will persist for free and is source-controllable!
 
@@ -52,6 +54,6 @@ I use Tailwind in a pragmatic and predictable fashion. With this configuation, a
 
 If you like the way I use Tailwind, awesome! If not, just delete it and create your own. That's the beauty of using Tailwind.
 
-### Knock Yourself Out
+## Knock Yourself Out!
 
 Thank you for taking the time to check out this repo and read through the docs. I hope this tool is useful and pleasant to work with. Have a great day!
