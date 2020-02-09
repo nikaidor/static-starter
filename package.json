@@ -1,5 +1,5 @@
 {
-  "name": "static-start",
+  "name": "static-starter",
   "description": "A starter template for building wonderful static sites.",
   "author": "Matt Waler",
   "main": "11ty.config.js",
