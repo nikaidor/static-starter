@@ -1,10 +1,10 @@
 import '../styles/_main.pcss'
 import 'alpinejs'
-import Message from './Message.svelte'
+import Users from './Users.svelte'
 import { run } from './helpers'
 
-run('[svelte-message]', target => {
-  new Message({
+run('[svelte-users]', target => {
+  new Users({
     target,
   })
 })
