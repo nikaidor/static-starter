@@ -1,6 +1,12 @@
 <script>
   import axios from 'axios'
 
+  async function getMessage() {
+    const { data } = await axios.get('/test.json')
+    console.log(data)
+  }
+  getMessage()
+
   let users = []
   let input = ''
   let state = 'loading'

@@ -9,7 +9,7 @@ module.exports = config => {
 
   return {
     dir: {
-      input: 'pages',
+      input: 'templates',
       output: 'dist',
     },
     jsDataFileSuffix: '.config',

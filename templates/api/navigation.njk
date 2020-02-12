@@ -1,0 +1,8 @@
+[
+  {% for item in navigation.header  %}
+    {
+      "text": "{{ item.text }}",
+      "link": "{{ item.link }}"
+    }{{ ',' if not loop.last }}
+  {% endfor  %}
+]

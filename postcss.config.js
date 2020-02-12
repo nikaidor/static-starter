@@ -1,6 +1,6 @@
 const isDev = process.env.NODE_ENV !== 'production'
 const purge = {
-  content: ['pages/**/*.njk', 'scripts/**/*.js', 'scripts/**/*.svelte'],
+  content: ['scripts/**/*.js', 'scripts/**/*.svelte', 'templates/**/*.njk'],
   extractors: [
     {
       extractor: value => value.match(/[A-z0-9-:%/]+/g) || [],

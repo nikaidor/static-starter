@@ -32,13 +32,13 @@ For bundling, this project uses [Rollup](https://rollupjs.org/guide/en/). This i
 
 For simple data-driven functionality like toggling visibility of menus, especially in scenarios where you would like the markup to be static and indexable, reach for [Alpine](https://github.com/alpinejs/alpine/). It provides a Vue-esque API that allows you to script inside the markup.
 
-**Note:** See `pages/about.njk` for an example of Alpine in action.
+**Note:** See `templates/about.njk` for an example of Alpine in action.
 
 ### Svelte
 
 For more complex functionality, especially those that don't require SEO, such as pulling data from an API client side or sending post requests, this project utilitizes [Svelte](https://svelte.dev). Svelte is an exceptional JS framework that makes reactivity simple and predictable. See `scripts/Users.svelte` to get an idea of how and when to utilize Svelte over Alpine.
 
-**Note:** See `pages/index.njk` and `scripts/_main.js` to see how Svelte can be initialized on pages.
+**Note:** See `templates/index.njk` and `scripts/_main.js` to see how Svelte can be initialized on pages.
 
 ### JSON-Server
 
