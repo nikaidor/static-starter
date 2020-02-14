@@ -7,12 +7,5 @@ title: About
 {% block body %}
   <div class="container">
     <h1>This is the {{ title }} page.</h1>
-
-    {# Alpine #}
-    <article x-data="{ show: false }">
-      <button class="mt-16 bg-blue-500 p-16 text-white" @click="show = !show">Toggle Show</button>
-      <div x-cloak class="mt-16" x-show="show">I show!</div>
-    </article>
-
   </div>
 {% endblock %}

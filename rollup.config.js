@@ -17,8 +17,7 @@ export default {
   },
   plugins: [
     replace({
-      API: prod ? '' : 'http://localhost:3000',
-      devMode: !prod,
+      DEV_MODE: !prod,
     }),
     svelte({
       dev: !prod,

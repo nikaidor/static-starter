@@ -1,6 +1,7 @@
-export const $ = el => document.querySelector(el)
+export const $ = (el, parent = document) => parent.querySelector(el)
 
-export const $$ = el => Array.from(document.querySelectorAll(el))
+export const $$ = (el, parent = document) =>
+  Array.from(parent.querySelectorAll(el))
 
 export const run = (element, fn) => {
   const matches = $$(element)
