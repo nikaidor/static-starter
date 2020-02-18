@@ -1,4 +1,4 @@
-# StaticStart
+# Static Starter
 
 The goal of this project is to bring together what I believe are most pragmatic and performant frontend frameworks and tools into a cohesive template for making web development wonderful.
 
