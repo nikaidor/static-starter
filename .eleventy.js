@@ -1,17 +1,17 @@
 module.exports = config => {
-  config.addPassthroughCopy({ static: './' })
-  config.setDataDeepMerge(true)
+  config.addPassthroughCopy({ public: './' })
 
   config.setBrowserSyncConfig({
     files: ['dist/**/*'],
     open: true,
   })
 
+  config.setDataDeepMerge(true)
+
   return {
     dir: {
       input: 'templates',
       output: 'dist',
     },
-    jsDataFileSuffix: '.config',
   }
 }

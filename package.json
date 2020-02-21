@@ -2,21 +2,17 @@
   "name": "static-starter",
   "description": "A starter template for building wonderful static sites.",
   "author": "Matt Waler",
-  "main": "11ty.config.js",
   "license": "UNLICENSED",
   "homepage": "https://github.com/mattwaler/static-starter",
   "repository": "https://github.com/mattwaler/static-starter",
   "bugs": "https://github.com/mattwaler/static-starter/issues",
-  "config": {
-    "11ty": "--quiet --config=11ty.config.js"
-  },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
-    "build:11ty": "eleventy $npm_package_config_11ty",
+    "build:11ty": "eleventy",
     "build:rollup": "rollup -c",
     "clean": "del-cli dist",
     "dev": "npm-run-all clean build:* -p dev:*",
-    "dev:11ty": "eleventy --serve $npm_package_config_11ty",
+    "dev:11ty": "eleventy --serve --quiet",
     "dev:rollup": "rollup -c -w"
   },
   "browserslist": "> 2%",
