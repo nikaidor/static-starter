@@ -1,14 +1,8 @@
 import '../styles/_main.pcss'
+import './footer'
+import './svelte'
 
-import Hello from './Hello.svelte'
-import { run } from './helpers'
-
-run('[data-hello]', target => {
-  new Hello({
-    target,
-  })
-})
-
+// DEV_MODE gets replaced at build time based on ENV!
 if (DEV_MODE) {
   console.log('We are in dev mode, ladies and gentlemen.')
 }

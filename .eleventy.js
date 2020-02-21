@@ -1,3 +1,5 @@
+const Nunjucks = require('nunjucks')
+
 module.exports = config => {
   config.addPassthroughCopy({ public: './' })
 
@@ -8,9 +10,17 @@ module.exports = config => {
 
   config.setDataDeepMerge(true)
 
+  config.setLibrary(
+    'njk',
+    new Nunjucks.Environment(new Nunjucks.FileSystemLoader('views/_includes'), {
+      lstripBlocks: true,
+      trimBlocks: true,
+    })
+  )
+
   return {
     dir: {
-      input: 'templates',
+      input: 'views',
       output: 'dist',
     },
   }
