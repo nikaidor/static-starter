@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,12 @@
     <title>{{ title }}</title>
     {% block head %}{% endblock %}
   </head>
-
-  <body>
-    {% include 'nav.njk' %}
-    {% block body %}{% endblock %}
+  <body data-nav class="flex flex-col min-h-100vh">
+    {% include 'header.njk' %}
+    <main class="flex-grow">
+      {% block body %}{% endblock %}
+    </main>
+    {% include 'footer.njk' %}
     <script src="/assets/main.bundle.js"></script>
     {% block scripts %}{% endblock %}
   </body>

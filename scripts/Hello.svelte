@@ -1,5 +1,9 @@
 <script>
-  const message = 'Hello from Svelte!'
+  import { message, users } from './store'
 </script>
 
-<p>{message}</p>
+<h2 class="text-30">{ $message }</h2>
+
+{#each $users as { name }}
+  <p>{name}</p>
+{/each}

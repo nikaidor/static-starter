@@ -3,7 +3,7 @@ import '../styles/_main.pcss'
 import Hello from './Hello.svelte'
 import { run } from './helpers'
 
-run('[svelte-hello]', target => {
+run('[data-hello]', target => {
   new Hello({
     target,
   })

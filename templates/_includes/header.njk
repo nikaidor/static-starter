@@ -1,0 +1,9 @@
+<header class="py-24 bg-gray-900 text-white">
+  <nav class="container">
+    {% for item in navigation.header %}
+      <a href="{{ item.link }}" class="underline">
+        {{ item.text -}}
+      </a>
+    {% endfor %}
+  </nav>
+</header>
