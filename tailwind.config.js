@@ -1,7 +1,7 @@
 const fontSizes = [14, 16, 18, 20, 24, 30, 36, 42]
-const fontWeights = [400, 500, 600, 700]
+const fontWeights = [400, 700]
 const percents = [25, 50, 100]
-const rems = [1, 8, 16, 24, 32, 48, 64, 320, 480, 640, 960]
+const rems = [1, 8, 16, 24, 32, 48, 64, 320, 480 ]
 const screens = [640, 768, 960]
 const viewports = [100]
 
@@ -13,11 +13,12 @@ fontSizes.forEach(value => { fontSizeObject[value] = rem(value) })
 const fontWeightObject = {}
 fontWeights.forEach(value => { fontWeightObject[value] = value })
 
-const percentObject = {}
+const percentObject = { '33%': '33.3333%', '66%': '66.6666%' }
 percents.forEach(value => { percentObject[`${value}%`] = `${value}%` })
 
 const remObject = {}
 rems.forEach(value => { remObject[value] = rem(value) })
+screens.forEach(value => remObject[value] = rem(value))
 
 const negativeRems = rems.map(value => `-${value}`)
 const negativeRemObject = {}
@@ -51,6 +52,7 @@ module.exports = {
     },
     fontSize: fontSizeObject,
     fontWeight: fontWeightObject,
+    gap: remObject,
     height: spacing,
     margin: { ...spacing, ...negativeRemObject },
     maxHeight: spacing,

@@ -2,8 +2,9 @@
   import { message } from './store'
 
   function changeMessage() {
-    console.log('hello?')
-    message === 'Hello world.' ? message.set('Change state!') : message.set('Hello world.')
+    return $message == 'Hello world.'
+      ? message.set('This changed everywhere!')
+      : message.set('Hello world.')
   }
 </script>
 
