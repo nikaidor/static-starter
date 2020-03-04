@@ -1,4 +1,6 @@
 import { run } from './helpers'
-import Hello from './Hello.svelte'
+import Message from './message.svelte'
+import Users from './users.svelte'
 
-run('[data-hello]', target => new Hello({ target }))
+run('[data-message]', target => new Message({ target }))
+run('[data-users]', target => new Users({ target }))

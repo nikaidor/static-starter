@@ -1,5 +1,5 @@
 <script>
-  import { message, users } from './store'
+  import { users, message } from './store'
 </script>
 
 <h2 class="text-30">{ $message }</h2>
